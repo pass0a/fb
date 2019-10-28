@@ -60,7 +60,7 @@ steps:
 - task: GitHubRelease@0
   displayName: 'GitHub release (create)'
   inputs:
-    gitHubConnection: github
+    gitHubConnection: ga-connect
     title: ChangeLog
     addChangeLog: false
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
