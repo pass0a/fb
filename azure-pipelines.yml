@@ -37,7 +37,7 @@ steps:
    cd arm
    cmake ../../generate -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=../../cmake/imx6qwin.cmake -DCMAKE_INSTALL_PREFIX=../../output -DCMAKE_ARM_GCC=%linaro%  -DCMAKE_MAKE_PROGRAM=mingw32-make.exe -DTAGS_VERSION=%BUILD_MAINVERSION%%BUILD_BUILDID%
    cmake --build ./ --target install --config Release
-   cp %linaro%/arm-linux-gnueabihf/lib/libstdc++.so.6.0.22 ../../output/
+   # cp %linaro%/arm-linux-gnueabihf/lib/libstdc++.so.6.0.22 ../../output/
    cd ../..
   displayName: 'build arm in windows'
 
@@ -55,7 +55,7 @@ steps:
     rootFolderOrFile: output/
     includeRootFolder: false
     archiveType: tar
-    archiveFile: '$(Build.ArtifactStagingDirectory)/img-armeabiv7a-$(Build.SourceBranchName).tar.gz'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/fb-armeabiv7a-$(Build.SourceBranchName).tar.gz'
 
 - task: GitHubRelease@0
   displayName: 'GitHub release (create)'
