@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"build": "npm run clean && cd src && tsc",
-		"clean": "rimraf ../output/node_modules/img/*.js",
+		"clean": "rimraf ../output/node_modules/fb/*.js",
 		"nyc_out": "rimraf dist && rimraf .nyc_output && mkdirp .nyc_output && node copy.js ",
 		"pretest": "npm run nyc_out && nyc instrument test dist/test && nyc instrument src dist/src && tsc",
 		"test": "passoa node_modules/tape/bin/tape dist/test/*.test.js",
